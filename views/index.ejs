@@ -14,11 +14,13 @@
 
   <h3>Messages</h3>
   <ul class="messages">
-  <% for(var i=0; i<messages.length; i++) {%>
+  <% for(var i=0; i<messages.length; i++) {%> <!--BEE STING SYNTAX-->
     <li class="message">
       <span><%= messages[i].name %></span>
       <span><%= messages[i].msg %></span>
-      <span><%= messages[i].thumbUp %></span>
+      <!--<span><%= messages[i].thumbUp %></span> --> <!--replace with total-->
+      <span class="total"><%= messages[i].thumbUp || 0) - (messages[i].thumbDown) || 0) %></span>
+
       <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
       <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
       <span><i class="fa fa-trash" aria-hidden="true"></i></span>
@@ -38,3 +40,36 @@
 
 </body>
 </html>
+
+<!-- 
+for 0 in the for loop
+message.name - Hector
+message.msg - sent at 
+message.thumb up - 0
+
+if we console.log messages - we get nothing because it's not JS or HTML 
+in server.js you could console.log(result)
+
+
+
+//index.ejs is NOT an HTML - it's a rendering of an HTML file
+//get messages from the the databse - sotred in an array and pass it throuigh the ejs file
+//message is the ARRAY
+//message.length - the # of documents
+//each time the for loop runs 
+//message 0 - gives the first message 
+
+//ARRAY gets called Messages in EJS
+//Messages is an object 
+//EJS can take in an object 
+
+!!!!IMPORTANT TO KNOW!!!!!!
+if I want to use JS, open and close 
+ <% - syntax for EJS - actions
+<%= - add this - direct values (grabbing a value)
+
+
+There’s no need for an HTML FILE
+Rendering will respond with an index.html
+
+-->
